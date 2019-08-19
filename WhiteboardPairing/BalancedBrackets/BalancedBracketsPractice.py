@@ -9,35 +9,25 @@
 
 def balancedBrackets(string):
     array = list(string)
-    bracket_counter = 0
-    braces_counter = 0
-    parantheses_counter = 0
+
+    stack = []
+
     openers = {
         "(": ")",
         "{": "}",
         "[": "]"
     }
-    for character in range(len(array)):
-        if array[character] == "[":
-            bracket_counter += 1
-        if array[character] == "{":
-            braces_counter += 1
-        if array[character] == "(":
-            parantheses_counter += 1
-        if array[character] == "]":
-            bracket_counter -= 1
-        if array[character] == "}":
-            braces_counter -= 1
-        if array[character] == ")":
-            parantheses_counter -= 1
 
-    if bracket_counter + braces_counter + parantheses_counter != 0:
-        return False
-    for character in range(len(array)):
-        if array[character+1] == openers[array[character]]:
-            array.pop(character+1)
-            array.pop(character)
-    return len(array) == 0
+    closers = ["}", "]", ")"]
+
+    for c in array:
+        if c in openers:
+            stack.append(c)
+        elif c in closers:
+            if openers[stack.pop()] != c:
+                return False
+
+    return len(stack) == 0
 
 
 print(balancedBrackets('{}[]()'))        # should print True
