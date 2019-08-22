@@ -10,3 +10,5 @@ For example, for `n = 2`, your function should output:
 ```
 
 So your output should be an array of arrays, where the length of each inner array is `n`.
+
+<!-- So it is going to increase exponentially each time. -->
