@@ -12,3 +12,5 @@ For example, for a staircase with n = 3 (the stair has 3 steps), there are 4 way
 So `climbStairs(3)` should return 4. 
 
 Analyze the time and space complexity of your solution.
+
+^^^^^  Don't forget this step! ^^^^^^^^
